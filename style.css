@@ -1,3 +1,110 @@
-.contenedor {
+
+.contenedor_principal {
+    font-family: 'Poppins', sans-serif;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
 }
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF5151;
+    height: 100px;
+    box-sizing: border-box; /* Para que el padding-right no empuje el logo fuera del header */
+    padding-left: 0px;
+    padding-right: 50px;
+}
+
+.contenedor_fichas {
+    width: 400px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        "ficha1 ficha2"
+        "ficha3 ficha4";
+}
+
+.ficha {
+  background-color: #ddd;
+  padding: 20px 0px;
+  text-align: center;
+  border-radius: 8px;
+  max-height: 200px;
+}
+
+#ficha-lin {
+    background-color: #FFD4D4;
+}
+
+#ficha-milca {
+    background-color: #FA9673;
+}
+
+#ficha-dubin {
+    background-color: #8ECCFF;
+}
+
+#ficha-efren {
+    background-color: #F2FFB6;
+}
+
+.foto {
+    width: 100px;
+    height: 125px;
+    border-radius: 10px;
+}
+
+.foto:hover {
+    outline: 3px solid aquamarine;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+}
+
+/*
+nav {
+    background-color: rgb(207, 250, 164);
+    color: crimson;
+    grid-area: nav;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contenido {
+    background-color: darkorchid;
+    color: aliceblue;
+    padding: 20px;
+    grid-area: contenido;
+    border-radius: 10px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: darkblue;
+    color: rgb(252, 252, 155);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bloque {
+    color: rgb(160, 70, 70);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+    */
