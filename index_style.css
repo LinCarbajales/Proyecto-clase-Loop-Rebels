@@ -1,10 +1,22 @@
+html, body {
+  height: 100%; /* Necesario para el flex según ChatGPT */
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
 
 .contenedor_principal {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 0px;
+    flex: 1;
+    margin: 20px;
 }
 
 header {
@@ -46,22 +58,47 @@ header {
 }
 
 .contenedor_fichas {
-    width: 400px;
-    margin: 20px auto;
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
-        "ficha1 ficha2"
-        "ficha3 ficha4";
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas siempre en pantalla grande */
+  gap: 20px;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 .ficha {
-  background-color: #ddd;
-  padding: 20px 0px;
-  text-align: center;
+  display: flex;
+  gap: 20px;
+  padding: 30px;
   border-radius: 8px;
-  max-height: 200px;
+  box-sizing: border-box;
+  width: 300px;
+  justify-content: space-evenly;
+}
+
+.ficha .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.ficha .nombre {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.ficha .redes {
+  display: flex;
+  gap: 10px;
+}
+
+/* 🔽 En pantallas pequeñas: una sola columna */
+@media (max-width: 800px) {
+  .contenedor_fichas {
+    grid-template-columns: 1fr; /* Una columna */
+  }
 }
 
 #ficha-lin {
