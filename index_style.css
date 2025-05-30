@@ -29,7 +29,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 24px;
-    background-color: #FF5151;
+    background-color: #CED4B4;
 }
 
 .logo {
@@ -132,22 +132,7 @@ header {
     height: auto;
 }
 
-button {
-  background-color: #AEB0B0;    
-  color: black;                 
-  font-size: 1.2rem;            /* tamaño grande de texto */
-  padding: 15px 30px;           /* botón grande */
-  border: none;                 /* sin borde por defecto */
-  border-radius: 12px;          /* esquinas redondeadas */
-  cursor: pointer;             /* mano al pasar el ratón */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra sutil */
-}
 
-button:hover {
-  background-color: #dadada;  /* un poco más oscuro al pasar el ratón */
-  transform: scale(1.05);     /* animación ligera al hacer hover */
-}
 
 .site-footer {
   background-color: #222;
