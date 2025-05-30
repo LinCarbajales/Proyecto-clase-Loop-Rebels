@@ -2,38 +2,37 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #ffffff;
   margin: 0;
-  padding: 40px 20px;
+  padding: 10px 20px;
   position: relative;
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  overflow-y: hidden; 
 }
 
 body::before,
 body::after {
   content: '';
   position: absolute;
-  width: 250px; 
+  width: 250px;
   height: 250px;
   background-color: #ffeef3;
   transform: rotate(45deg);
   z-index: 0;
+  pointer-events: none;
 }
 
 body::before {
-  top: -125px;    
-  right: -125px;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%) rotate(45deg);
 }
 
 body::after {
-  bottom: -125px;
-  left: -125px;
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%) rotate(45deg);
 }
 
-.header {
-  display: flex;
-  align-items: center; 
-  margin-left: 150px;  
-  gap: 20px;           
-}
+
 
 .logo {
   width: 90px;
@@ -112,3 +111,4 @@ h3 {
   content: "✓ ";
   color: #4caf50;
 }
+
