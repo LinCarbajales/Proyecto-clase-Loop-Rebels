@@ -8,15 +8,41 @@
 }
 
 header {
-    display: flex;
     width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+
+.navbar-top {
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 24px;
     background-color: #FF5151;
-    height: 100px;
-    box-sizing: border-box; /* Para que el padding-right no empuje el logo fuera del header */
-    padding-left: 0px;
-    padding-right: 50px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.logo img {
+    height: 30px;
+}
+
+.cta-button {
+    background-color: #24b8e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .contenedor_fichas {
@@ -84,4 +110,37 @@ button {
 button:hover {
   background-color: #dadada;  /* un poco más oscuro al pasar el ratón */
   transform: scale(1.05);     /* animación ligera al hacer hover */
+}
+
+.site-footer {
+  background-color: #222;
+  color: #eee;
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.site-footer .footer-content p {
+  margin: 0 0 15px;
+  font-size: 0.9rem;
+}
+
+.site-footer .contact-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 20px;
+}
+
+.site-footer .contact-links li a {
+  color: #50b3a2;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.site-footer .contact-links li a:hover {
+  color: #fff;
 }
