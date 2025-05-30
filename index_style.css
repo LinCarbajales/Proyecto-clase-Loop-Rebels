@@ -1,41 +1,104 @@
+html, body {
+  height: 100%; /* Necesario para el flex según ChatGPT */
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
 
 .contenedor_principal {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 0px;
+    flex: 1;
+    margin: 20px;
 }
 
 header {
-    display: flex;
     width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+
+.navbar-top {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FF5151;
-    height: 100px;
-    box-sizing: border-box; /* Para que el padding-right no empuje el logo fuera del header */
-    padding-left: 0px;
-    padding-right: 50px;
+    padding: 10px 24px;
+    background-color: #CED4B4;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.logo img {
+    height: 30px;
+}
+
+.cta-button {
+    background-color: #24b8e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .contenedor_fichas {
-    width: 400px;
-    margin: 20px auto;
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 
-        "ficha1 ficha2"
-        "ficha3 ficha4";
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas siempre en pantalla grande */
+  gap: 20px;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 .ficha {
-  background-color: #ddd;
-  padding: 20px 0px;
-  text-align: center;
+  display: flex;
+  gap: 20px;
+  padding: 30px;
   border-radius: 8px;
-  max-height: 200px;
+  box-sizing: border-box;
+  width: 300px;
+  justify-content: space-evenly;
+}
+
+.ficha .info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.ficha .nombre {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.ficha .redes {
+  display: flex;
+  gap: 10px;
+}
+
+/* 🔽 En pantallas pequeñas: una sola columna */
+@media (max-width: 800px) {
+  .contenedor_fichas {
+    grid-template-columns: 1fr; /* Una columna */
+  }
 }
 
 #ficha-lin {
@@ -69,19 +132,37 @@ header {
     height: auto;
 }
 
-button {
-  background-color: #AEB0B0;    
-  color: black;                 
-  font-size: 1.2rem;            /* tamaño grande de texto */
-  padding: 15px 30px;           /* botón grande */
-  border: none;                 /* sin borde por defecto */
-  border-radius: 12px;          /* esquinas redondeadas */
-  cursor: pointer;             /* mano al pasar el ratón */
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra sutil */
+
+
+.site-footer {
+  background-color: #222;
+  color: #eee;
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-button:hover {
-  background-color: #dadada;  /* un poco más oscuro al pasar el ratón */
-  transform: scale(1.05);     /* animación ligera al hacer hover */
+.site-footer .footer-content p {
+  margin: 0 0 15px;
+  font-size: 0.9rem;
+}
+
+.site-footer .contact-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 20px;
+}
+
+.site-footer .contact-links li a {
+  color: #50b3a2;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.site-footer .contact-links li a:hover {
+  color: #fff;
 }
