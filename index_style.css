@@ -21,7 +21,7 @@ body {
 
 header {
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+    font-family: 'Poppins', sans-serif;
 }
 
 .navbar-top {
@@ -94,12 +94,57 @@ header {
   gap: 10px;
 }
 
+.menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Barra inferior */
+.navbar-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px;
+    background-color: #e9eed4;
+    border-top: 1px solid #e2e6d5;
+    
+}
+
+.navbar-bottom a {
+    text-decoration: none;
+    color: #111111;
+    font-weight: 500;
+    transition: color 0.3s;
+    
+}
+.navbar-bottom a:hover {
+    color: #50b3a2;
+}
+
+/* Menú alternativo para pantallas estrechas */
+.alt-menu {
+  display: none;
+  background: none;
+  border: none;
+}
+
 /* 🔽 En pantallas pequeñas: una sola columna */
 @media (max-width: 768px) {
   .contenedor_fichas {
     grid-template-columns: 1fr; /* Una columna */
   }
+  .alt-menu {
+    display: flex; /* Mostrar botón hamburguesa */
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  .menu, .navbar-bottom {
+    display: none;
+  }
 
 }
 
@@ -168,3 +213,4 @@ header {
 .site-footer .contact-links li a:hover {
   color: #fff;
 }
+
