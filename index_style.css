@@ -22,6 +22,7 @@ body {
 header {
     width: 100%;
     font-family: 'Poppins', sans-serif;
+    position: relative;
 }
 
 .navbar-top {
@@ -132,8 +133,13 @@ header {
 
 .burger-menu {
   display: none;
-  background: none;
-  border: none;
+  position: absolute;
+  top: 100%; /* Justo debajo del botón o header */
+  left: 0;
+  z-index: 1000; /* Asegura que esté por encima del contenido */
+  background-color: #e9eed4;
+  width: 160px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 /* 🔽 En pantallas pequeñas: una sola columna */
@@ -157,17 +163,6 @@ header {
     justify-content: flex-start;
     gap: 6px; 
   }
-  
-.burger-menu {
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 12px;
-  background-color: #e9eed4;
-  width: 180px;
-}
 
 .burger-menu a {
     text-decoration: none;
@@ -175,10 +170,22 @@ header {
     font-weight: 500;
     transition: color 0.3s;
     border-bottom: 1px solid #a1ad7a;
-    padding-bottom:  8px;
+    padding-top:  4px;
+    padding-bottom: 3px;
+}
+
+.burger-menu a:hover {
+    color: #50b3a2;
 }
 
 }
+
+.burger-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 12px;
+  }
 
 #ficha-lin {
     background-color: #FFD4D4;
