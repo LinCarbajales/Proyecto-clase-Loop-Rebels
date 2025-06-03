@@ -142,6 +142,23 @@ header {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+.button-toggle {
+  background-color: #CED4B4;
+  color: #111111;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-toggle:hover {
+  background-color: #a1ad7a;
+  color: white;
+}
+
 /* 🔽 En pantallas pequeñas: una sola columna */
 @media (max-width: 768px) {
   .contenedor_fichas {
@@ -156,12 +173,6 @@ header {
 
   .menu, .navbar-bottom {
     display: none;
-  }
-
-  .corner {
-    display: flex;
-    justify-content: flex-start;
-    gap: 6px; 
   }
 
 .burger-menu a {
