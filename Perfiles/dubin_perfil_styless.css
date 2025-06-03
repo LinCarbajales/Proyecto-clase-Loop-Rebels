@@ -13,25 +13,23 @@ body::after {
   position: fixed; 
   width: 250px;
   height: 250px;
-  background-color: #8ECCFF;
+  background-color: #f2ffb6;
   transform: rotate(45deg);
   z-index: 0;
   pointer-events: none;
-} */
+}
 
-/* body::before {
-  top: 112px; 
+body::before {
+  top: 0;
   right: 0;
   transform: translate(50%, -50%) rotate(45deg);
 }
 
-
 body::after {
-  bottom: 90px;
+  bottom: 0;
   left: 0;
   transform: translate(-50%, 50%) rotate(45deg);
 } */
-
 
 header {
     width: 100%;
@@ -45,7 +43,7 @@ header {
     padding: 10px 24px;
     background-color: #CED4B4;
     position: relative;
-    z-index: 1;          
+     z-index: 10;      
 }
 
 .navbar-bottom {
@@ -55,6 +53,8 @@ header {
     padding: 12px;
     background-color: #e9eed4;
     border-top: 1px solid #e2e6d5;
+    position: relative;
+     z-index: 10;
     
 }
 
@@ -129,10 +129,9 @@ h3 {
 
 .texto-encabezado ul li::before {
   content: "• ";
-  color: #e91e63;
+  color: #8ECCFF;
   font-weight: bold;
 }
-
 
 .imagen-perfil img {
   width: 300px;
@@ -165,6 +164,7 @@ h3 {
   content: "✓ ";
   color: #4caf50;
 }
+
 .site-footer {
   background-color: #222;
   color: #eee;
@@ -202,13 +202,8 @@ h3 {
 
 @media (max-width: 768px) {
   body {
-    padding: 0; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    overflow-y: auto; 
+    padding: 0;
+    overflow-x: hidden;
   }
 
   .perfil {
