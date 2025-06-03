@@ -72,15 +72,12 @@ body {
 /*Servicios*/
 .servicios { 
     max-width: 1000px;
-    margin: auto ;
+    margin: auto;
     padding: 40px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: center;
-    
-
-}
+    }
 
 .servicios h2 {
     font-size: 32px;
@@ -101,21 +98,25 @@ body {
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(0,0,0,0.05);
     text-align: center;
-    width: calc(50% - 20px); /*Dos por fila*/
-    box-sizing: border-box;
-      /* NUEVO: igualar alturas */
+
+    /*Forzar misma altura en grid*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    min-height: 360px; /* Puedes ajustar esta altura */
+    min-height: 360px;
+
+    /*Dos por fila*/
+    box-sizing: border-box;
+    
 }
 
 .servicio img {
     width: 180px;
     height: 180px;
     object-fit: cover;
-    margin: 0 auto 16px; /* centro horizontal + espacio debajo */
+    margin: 0 auto 16px; 
+    
+    /* centro horizontal + espacio debajo */
     display: block;
     border-radius: 8px;
 }
@@ -129,6 +130,13 @@ body {
 .servicio p {
     font-size: 14px;
     color: #444;
+    flex-grow: 1; /*Estira cotenido para equilibrar*/
+}
+
+/*Para mejorar el padding del cuadro que tiene menos texto y todos tengan el mismo tamaño*/
+.invisible-padding {
+    visibility: hidden;
+    height: 1em;
 }
 
 /*Testimonios */
