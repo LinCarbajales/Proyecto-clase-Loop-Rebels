@@ -246,3 +246,87 @@ header {
   color: #fff;
 }
 
+.ficha {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.ficha-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.ficha-front, .ficha-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ficha-front {
+  background-color: #fff;
+}
+
+.ficha-back {
+  background-color: #222;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Animación al hacer hover */
+.ficha:hover .ficha-inner {
+  transform: rotateY(180deg);
+}
+
+/* Diseño general */
+.contenedor_fichas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Lin */
+.ficha:nth-child(1) .ficha-front {
+  background-color: #FFD4D4;
+}
+
+/* Milca */
+.ficha:nth-child(2) .ficha-front {
+  background-color: #FA9673;
+}
+
+/* Dubin */
+.ficha:nth-child(3) .ficha-front {
+  background-color: #8ECCFF;
+}
+
+/* Efrén */
+.ficha:nth-child(4) .ficha-front {
+  background-color: #F2FFB6;
+}
+
+.ficha-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
