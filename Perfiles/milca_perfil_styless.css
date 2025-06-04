@@ -64,8 +64,8 @@ body::after {
 
 header {
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    animation: fadeIn 0.8s ease-out;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
 }
 
 .navbar-top {
@@ -74,30 +74,6 @@ header {
     align-items: center;
     padding: 10px 24px;
     background-color: #CED4B4;
-    position: relative;
-    z-index: 10;      
-}
-
-.navbar-bottom {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 12px;
-    background-color: #e9eed4;
-    border-top: 1px solid #e2e6d5;
-    position: relative;
-    z-index: 10;
-}
-
-.navbar-bottom a {
-    text-decoration: none;
-    color: #111111;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.navbar-bottom a:hover {
-    color: #50b3a2;
 }
 
 .logo {
@@ -108,25 +84,141 @@ header {
     color: #111;
     font-weight: bold;
     font-size: 18px;
+
 }
 
 .logo img {
     height: 30px;
 }
 
-.cta-button {
-    background-color: #24b8e2;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+.menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.cta-button:hover {
-    transform: translateY(-1px);
+/* Barra inferior */
+.navbar-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px;
+    background-color: #e9eed4;
+    border-top: 1px solid #e2e6d5;
+    
+}
+
+.navbar-bottom a {
+    text-decoration: none;
+    color: #111111;
+    font-weight: 500;
+    transition: color 0.3s;
+    
+}
+.navbar-bottom a:hover {
+    color: #50b3a2;
+}
+
+/* Menú alternativo para pantallas estrechas */
+.alt-menu {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.burger-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Justo debajo del botón o header */
+  left: 0;
+  z-index: 1000; /* Asegura que esté por encima del contenido */
+  background-color: #e9eed4;
+  width: 160px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.names-menu {
+  display: none;
+  position: absolute;
+  top: 50%; 
+  left: 180px;
+  z-index: 1000;
+  background-color: #e9eed4;
+  width: 90px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mainbtn {
+  background-color: #CED4B4;
+  color: #111111;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mainbtn:hover {
+  background-color: #a1ad7a;
+  color: white;
+}
+
+.conocenos:hover {
+  cursor: pointer;
+}
+
+/* 🔽 En pantallas pequeñas: una sola columna */
+@media (max-width: 768px) {
+  .contenedor_fichas {
+    grid-template-columns: 1fr; /* Una columna */
+  }
+  .alt-menu {
+    display: flex; /* Mostrar botón hamburguesa */
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu, .navbar-bottom {
+    display: none;
+  }
+
+.burger-menu a {
+    text-decoration: none;
+    color: #111111;
+    font-weight: 500;
+    transition: color 0.3s;
+    border-bottom: 1px solid #a1ad7a;
+    padding-top:  4px;
+    padding-bottom: 3px;
+}
+
+.burger-menu a:hover {
+    color: #50b3a2;
+}
+
+}
+
+.burger-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 12px;
+  }
+
+.names-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 12px;
+}
+
+#logo {
+    width: 100px;
+    height: auto;
 }
 
 h3 {
