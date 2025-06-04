@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
         menuLinks.classList.toggle("open");
     });
 
+conocenos.addEventListener("mouseover", function(){
+        namesMenu.classList.add("open");
+    });
+
     conocenos.addEventListener("click", function(){
         namesMenu.classList.toggle("open");
     });
