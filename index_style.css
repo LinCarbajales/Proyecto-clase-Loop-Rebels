@@ -19,35 +19,6 @@ body {
     margin: 20px;
 }
 
-header {
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-}
-
-.navbar-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 24px;
-    background-color: #CED4B4;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #111;
-    font-weight: bold;
-    font-size: 18px;
-
-}
-
-.logo img {
-    height: 30px;
-}
-
 .contenedor_fichas {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Dos columnas siempre en pantalla grande */
@@ -83,6 +54,37 @@ header {
 .ficha .redes {
   display: flex;
   gap: 10px;
+}
+
+/* Copiar a partir de aquí */
+
+header {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+    background-color: #CED4B4;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+.logo img {
+    height: 30px;
 }
 
 .menu {
@@ -210,6 +212,13 @@ header {
   padding: 12px;
 }
 
+#logo {
+    width: 100px;
+    height: auto;
+}
+
+/* Parar de copiar aquí */
+
 #ficha-lin {
     background-color: #FFD4D4;
 }
@@ -234,11 +243,6 @@ header {
 
 .foto:hover {
     outline: 3px solid aquamarine;
-}
-
-#logo {
-    width: 100px;
-    height: auto;
 }
 
 
