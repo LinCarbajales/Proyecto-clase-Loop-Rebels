@@ -245,11 +245,21 @@ header {
     border-radius: 10px;
 }
 
-.foto:hover {
-    outline: 3px solid aquamarine;
+.fotolin:hover {
+    outline: 3px solid rgb(255, 86, 154);
 }
 
+.fotomilca:hover {
+    outline: 3px solid rgb(252, 63, 0);
+}
 
+.fotodubin:hover {
+    outline: 3px solid rgb(0, 155, 252);
+}
+
+.fotoefren:hover {
+    outline: 3px solid rgb(255, 204, 0);
+}
 
 .site-footer {
     background-color: #545A36;
