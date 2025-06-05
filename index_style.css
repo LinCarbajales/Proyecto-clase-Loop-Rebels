@@ -13,6 +13,51 @@ body {
   min-height: 100vh; /* Ocupa toda la altura de la pantalla */
 }
 
+/* Animaciones de aparición */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .contenedor_principal {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -21,6 +66,8 @@ body {
     align-items: center;
     flex: 1;
     margin: 20px;
+    /* Animación para el contenedor principal */
+    animation: fadeInUp 0.8s ease-out;
 }
 
 .contenedor_fichas {
@@ -30,6 +77,8 @@ body {
   max-width: 100%;
   margin-top: 20px;
   margin-bottom: 60px;
+  /* Animación para el contenedor de fichas */
+  animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .ficha {
@@ -40,6 +89,21 @@ body {
   box-sizing: border-box;
   width: 300px;
   justify-content: space-evenly;
+  /* Animación individual para cada ficha */
+  animation: fadeInScale 0.6s ease-out both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Delays escalonados para las fichas */
+.ficha:nth-child(1) { animation-delay: 0.3s; }
+.ficha:nth-child(2) { animation-delay: 0.4s; }
+.ficha:nth-child(3) { animation-delay: 0.5s; }
+.ficha:nth-child(4) { animation-delay: 0.6s; }
+
+/* Efecto hover para las fichas */
+.ficha:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .ficha .info {
@@ -53,11 +117,15 @@ body {
   font-weight: bold;
   font-size: 1.2rem;
   margin: 0;
+  /* Animación sutil para el nombre */
+  animation: fadeInUp 0.6s ease-out 0.8s both;
 }
 
 .ficha .redes {
   display: flex;
   gap: 10px;
+  /* Animación para las redes sociales */
+  animation: fadeInUp 0.6s ease-out 1s both;
 }
 
 /* Copiar a partir de aquí */
@@ -66,6 +134,8 @@ header {
     width: 100%;
     font-family: 'Poppins', sans-serif;
     position: relative;
+    /* Animación para el header */
+    animation: fadeInDown 0.8s ease-out;
 }
 
 .navbar-top {
@@ -84,7 +154,13 @@ header {
     color: #111;
     font-weight: bold;
     font-size: 18px;
+    /* Animación para el logo */
+    animation: fadeInLeft 0.8s ease-out 0.2s both;
+    transition: transform 0.3s ease;
+}
 
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .logo img {
@@ -106,18 +182,38 @@ header {
     padding: 12px;
     background-color: #e9eed4;
     border-top: 1px solid #e2e6d5;
-    
+    /* Animación para la barra de navegación inferior */
+    animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .navbar-bottom a {
     text-decoration: none;
     color: #111111;
     font-weight: 500;
-    transition: color 0.3s;
-    
+    transition: color 0.3s, transform 0.2s ease;
+    position: relative;
 }
+
 .navbar-bottom a:hover {
     color: #50b3a2;
+    transform: translateY(-2px);
+}
+
+/* Efecto de línea animada en hover */
+.navbar-bottom a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #50b3a2;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-bottom a:hover::after {
+    width: 100%;
 }
 
 /* Menú alternativo para pantallas estrechas */
@@ -136,6 +232,8 @@ header {
   background-color: #e9eed4;
   width: 160px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  /* Animación para el menú burger */
+  animation: fadeInDown 0.3s ease-out;
 }
 
 .names-menu {
@@ -147,6 +245,8 @@ header {
   background-color: #e9eed4;
   width: 90px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  /* Animación para el menú de nombres */
+  animation: fadeInLeft 0.3s ease-out;
 }
 
 .mainbtn {
@@ -158,12 +258,14 @@ header {
   padding: 8px 12px;
   font-size: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .mainbtn:hover {
   background-color: #a1ad7a;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .conocenos:hover {
@@ -190,7 +292,7 @@ header {
     text-decoration: none;
     color: #111111;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
     border-bottom: 1px solid #a1ad7a;
     padding-top:  4px;
     padding-bottom: 3px;
@@ -198,6 +300,7 @@ header {
 
 .burger-menu a:hover {
     color: #50b3a2;
+    padding-left: 8px;
 }
 
 }
@@ -207,7 +310,7 @@ header {
   flex-direction: column;
   gap: 20px;
   padding: 12px;
-  }
+}
 
 .names-menu.open {
   display: flex;
@@ -243,22 +346,29 @@ header {
     width: 100px;
     height: 125px;
     border-radius: 10px;
+    /* Animación para las fotos */
+    animation: fadeInScale 0.6s ease-out 0.7s both;
+    transition: all 0.3s ease;
 }
 
 .fotolin:hover {
     outline: 3px solid rgb(255, 86, 154);
+    transform: scale(1.05) rotate(2deg);
 }
 
 .fotomilca:hover {
     outline: 3px solid rgb(252, 63, 0);
+    transform: scale(1.05) rotate(-2deg);
 }
 
 .fotodubin:hover {
     outline: 3px solid rgb(0, 155, 252);
+    transform: scale(1.05) rotate(2deg);
 }
 
 .fotoefren:hover {
     outline: 3px solid rgb(255, 204, 0);
+    transform: scale(1.05) rotate(-2deg);
 }
 
 .site-footer {
@@ -268,11 +378,15 @@ header {
     padding: 30px 0;
     text-align: center;
     font-family: Arial, sans-serif;
+    /* Animación para el footer */
+    animation: fadeInUp 1.2s ease-out 0.8s both;
 }
 
 .site-footer .footer-content p {
     margin: 0 0 15px;
     font-size: 0.9rem;
+    /* Animación para el contenido del footer */
+    animation: fadeInUp 0.6s ease-out 1.4s both;
 }
 
 .site-footer .contact-links {
@@ -281,15 +395,19 @@ header {
     margin: 0;
     display: inline-flex;
     gap: 20px;
+    /* Animación para los enlaces de contacto */
+    animation: fadeInUp 0.6s ease-out 1.6s both;
 }
 
 .site-footer .contact-links li a {
     color: #fff;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .site-footer .contact-links li a:hover {
     color: #50b3a2;
+    transform: translateY(-3px);
 }
