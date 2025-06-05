@@ -247,6 +247,79 @@ body {
     height: 1em;
 }
 
+
+/* 🎨 ESTILOS DEL FORMULARIO DE CONTACTO MEJORADOS */
+#contacto {
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    margin: 60px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#form-contacto label {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    transition: border 0.2s ease-in-out;
+}
+
+#form-contacto input:focus,
+#form-contacto textarea:focus {
+    border-color: #24b8e2;
+    outline: none;
+}
+
+#form-contacto button {
+    background-color: #24b8e2;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#form-contacto button:hover {
+    background-color: #1899c4;
+}
+
+/* 📱 Adaptabilidad para pantallas pequeñas */
+@media (max-width: 600px) {
+    #contacto {
+    padding: 30px 16px;
+    }
+
+    #form-contacto {
+    gap: 16px;
+    }
+
+    #form-contacto button {
+    padding: 12px;
+    font-size: 15px;
+    }
+}
+
+
+
 /*Testimonios */
 .testimonios {
     background-color: #CED4B4;

@@ -23,12 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
 //para que la imagen aparezca en la pantalla con efecto de animación//
 window.addEventListener("load", () => {
     document.querySelectorAll("img").forEach(img => {
     img.classList.add("visible");
     });
 });
+
 
 //Header - Hamburguesa
 document.addEventListener("DOMContentLoaded", function() {
@@ -57,3 +59,37 @@ conocenos.addEventListener("mouseover", function(){
         }
     });
 });
+
+
+// 🧩 INICIO DEL FORMULARIO VALIDADO EN JS
+
+// Seleccionamos el formulario por su ID
+const formulario = document.querySelector("#form-contacto");
+
+// Evento que se dispara cuando se intenta enviar el formulario
+formulario.addEventListener("submit", function (e) {
+  e.preventDefault(); // ⛔ Evita que se recargue la página
+
+  // Tomamos los valores ingresados por el usuario
+    const nombre = document.querySelector("#nombre").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const mensaje = document.querySelector("#mensaje").value.trim();
+
+  // Verificamos que no estén vacíos
+    if (!nombre || !email || !mensaje) {
+    alert("⚠️ Por favor, completa todos los campos.");
+    return; // 🚫 No continúa si falta algo
+    }
+
+  // Opcional: validación muy básica de email
+    if (!email.includes("@") || !email.includes(".")) {
+    alert("⚠️ Por favor, ingresa un correo electrónico válido.");
+    return;
+    }
+
+  // ✅ Si todo está bien, mostramos mensaje y limpiamos
+    alert("✅ ¡Gracias por tu mensaje, " + nombre + "! Nos pondremos en contacto pronto.");
+  formulario.reset(); // 🧼 Limpia el formulario
+});
+
+// 🧩 FIN DEL FORMULARIO VALIDADO EN JS
