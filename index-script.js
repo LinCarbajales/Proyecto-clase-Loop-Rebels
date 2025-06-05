@@ -23,4 +23,34 @@ conocenos.addEventListener("mouseover", function(){
             namesMenu.classList.remove("open");
         }
     });
+
+});
+
+// Máquina de escribir
+
+function typeWriter(element, text, speed = 50, callback) {
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else if (typeof callback === "function") {
+      callback();
+    }
+  }
+  type();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const titulo = document.getElementById("titulo");
+  const intro = document.getElementById("intro-text");
+
+  typeWriter(titulo, "El equipo Loop Rebels", 50, () => {
+    typeWriter(
+      intro,
+      "En Loop Rebels no solo escribimos código, creamos ideas que funcionan.",
+      30
+    );
+  });
 });
