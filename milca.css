@@ -77,12 +77,12 @@ header {
 
 .burger-menu {
     display: none;
-    position: relative;
+    position: absolute;
     top: 100%; /* Justo debajo del botón o header */
     left: 0;
    z-index: 1000; /* Asegura que esté por encima del contenido */
     background-color: #e9eed4;
-    width: 160px;
+    width: 180px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
